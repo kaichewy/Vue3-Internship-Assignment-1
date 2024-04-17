@@ -10,6 +10,7 @@
 
 <script>
   import Film from './components/Film.vue'
+  import filmObj from './assets/01_part1_assignment.json'
   export default {
     name: 'App',
     components: {
@@ -18,13 +19,7 @@
     data() {
       return {
         numFilms: 3,
-        films: [{title: "Star Wars (1977)", actors: ["Mark Hamill", "Harrison Ford", "Carrie Fisher", "R2D2", "C3P0"], like: 0},
-                {title: "Toys Story (1955)", actors: ["Tom Hanks", "Tim Allen", "Don Rickles", "Woody", "Buzz Lightyear"], like: 0},
-                {title: "X-Men", actors: ["Michael", "Fassbender", "James Macavoy", "Jennifer Lawrence"], like: 0},
-                {title: "Avengers", actors: ["Mark Ruffalo", "Robert Downey Jr", "Chris Hemsworth", "Chris Evans", "Scarlett Johanson"], like: 0},
-                {title: "Men In Black", actors: ["Will Smith", "Tommy Lee Jones", "Random Actor", "Random Actor2"], like: 0},
-                {title: "Random Movie", actors: ["Random Actor 1", "Random Actor 2", "Random Actor 3", "Random Actor 4"], like: 0}
-              ]
+        films: filmObj.films.map(film => ({ ...film, like: 0 }))
       }
     },
     methods: {

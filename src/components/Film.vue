@@ -1,6 +1,6 @@
 <template>
     <div :class="{'liked': film.like===1, 'disliked': film.like===-1}">
-        <button @click="closeFilm">Delete</button> {{film.title}} <button class="like" @click="like" :disabled="film.like==-1">{{film.like==1 ? "Liked" : "Like" }}</button> <button class="dislike" @click="dislike" :disabled="film.like==1">{{film.like==-1 ? "Disliked" : "Dislike" }}</button>
+        <button @click="closeFilm">Delete</button> {{film.title}} ({{ film.year }})<button class="like" @click="like" :disabled="film.like==-1">{{film.like==1 ? "Liked" : "Like" }}</button> <button class="dislike" @click="dislike" :disabled="film.like==1">{{film.like==-1 ? "Disliked" : "Dislike" }}</button>
         <ul>
             <li v-for="actor in displayedActors">
                 <button @click="removeActor(actor)">Delete</button> {{ actor }}
